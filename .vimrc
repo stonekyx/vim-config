@@ -34,3 +34,6 @@ function! NewFile()
 endfunction
 
 autocmd BufNewFile * call NewFile()
+
+call pathogen#infect()
+let g:vim_markdown_folding_disabled=1
