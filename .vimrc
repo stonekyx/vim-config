@@ -38,3 +38,11 @@ autocmd BufNewFile * call NewFile()
 
 call pathogen#infect()
 let g:vim_markdown_folding_disabled=1
+
+" configure tags - add additional tags here or comment out not-used ones
+set tags+=~/.vim/tags/cpp
+set tags+=~/.vim/tags/gl
+set tags+=~/.vim/tags/sdl
+set tags+=~/.vim/tags/qt4
+" build tags of your own project with Ctrl-F12
+map <C-F12> :!ctags -R --sort=yes --c++-kinds=+pl --fields=+iaS --extra=+q .<CR>
