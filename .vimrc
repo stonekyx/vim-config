@@ -10,6 +10,7 @@ set expandtab
 set nohlsearch
 set autoindent
 set cindent
+set backspace=indent,eol,start
 colorscheme railscasts2
 set background=dark
 let g:indent_guides_start_level=2
