@@ -11,7 +11,6 @@ set nohlsearch
 set autoindent
 set cindent
 set backspace=indent,eol,start
-colorscheme railscasts2
 set background=dark
 let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
@@ -40,3 +39,4 @@ endif
 
 call pathogen#infect()
 let g:vim_markdown_folding_disabled=1
+colorscheme solarized
