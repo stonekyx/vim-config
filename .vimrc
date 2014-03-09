@@ -20,6 +20,7 @@ map <F4> :TlistToggle<cr>
 python from powerline.ext.vim import source_plugin; source_plugin()
 set laststatus=2
 set scrolloff=9999
+colorscheme Tomorrow-Night
 
 "Access X11 and <C-V> clipboard
 set clipboard=unnamed,unnamedplus
@@ -42,5 +43,5 @@ endif
 
 call pathogen#infect()
 let g:vim_markdown_folding_disabled=1
-colorscheme solarized
-let g:solarized_contrast="high"
+"colorscheme solarized
+"let g:solarized_contrast="high"
