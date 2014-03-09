@@ -21,6 +21,9 @@ python from powerline.ext.vim import source_plugin; source_plugin()
 set laststatus=2
 set scrolloff=9999
 
+"Access X11 and <C-V> clipboard
+set clipboard=unnamed,unnamedplus
+
 if filereadable(".vim.custom")
     so .vim.custom
 endif
@@ -40,3 +43,4 @@ endif
 call pathogen#infect()
 let g:vim_markdown_folding_disabled=1
 colorscheme solarized
+let g:solarized_contrast="high"

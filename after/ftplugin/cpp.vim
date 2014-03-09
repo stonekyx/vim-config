@@ -1,1 +1,1 @@
-set makeprg=g++\ -g\ -Wall\ %\ -o\ %:r
+set makeprg=g++\ -g\ -Wall\ -Wextra\ -std=c++0x\ %\ -o\ %:r
