@@ -17,7 +17,7 @@ let g:indent_guides_guide_size=1
 let g:indent_guides_enable_on_vim_startup=1
 nnoremap <F3> :set hlsearch!<CR>
 map <F4> :TlistToggle<cr>
-python from powerline.ext.vim import source_plugin; source_plugin()
+"python from powerline.ext.vim import source_plugin; source_plugin()
 set laststatus=2
 set scrolloff=9999
 colorscheme Tomorrow-Night
@@ -45,3 +45,6 @@ call pathogen#infect()
 let g:vim_markdown_folding_disabled=1
 "colorscheme solarized
 "let g:solarized_contrast="high"
+let g:ctrlspace_default_mapping_key="<C-a>"
+let g:airline_exclude_preview = 1
+let g:airline#extensions#branch#enabled = 1
