@@ -49,3 +49,11 @@ let g:airline_exclude_preview = 1
 let g:airline#extensions#branch#enabled = 1
 let g:instant_markdown_slow = 1
 let g:instant_markdown_autostart = 0
+
+autocmd FileType c let &makeprg='gcc -g -Wall -lm -o %:r %'
+autocmd FileType cpp let &makeprg='g++ -g -Wall -Wextra -std=c++0x % -o %:r'
+autocmd FileType haskell let &makeprg='ghc %'
+autocmd FileType java let &makeprg='javac -cp .:/usr/share/java/junit-4.11.jar %'
+autocmd FileType pascal let &makeprg='fpc -g %'
+autocmd FileType python let &makeprg='python2 %'
+autocmd FileType plaintex let &makeprg='pdflatex % && xpdf %:r.pdf &>/dev/null'

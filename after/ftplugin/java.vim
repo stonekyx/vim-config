@@ -1,5 +1,3 @@
-set makeprg=javac\ -cp\ .:/usr/share/java/junit-4.11.jar\ %
-
 if !exists("*NewJavaTest")
     function! NewJavaTest()
         try

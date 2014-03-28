@@ -1,5 +1,3 @@
-set makeprg=gcc\ -g\ -Wall\ -lm\ -o\ %:r\ %
-
 if !exists("*DoSplitHeader")
     function! DoSplitHeader(suffix)
         try
