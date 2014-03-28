@@ -25,9 +25,8 @@ colorscheme Tomorrow-Night
 "Access X11 and <C-V> clipboard
 set clipboard=unnamed,unnamedplus
 
-if filereadable(".vim.custom")
-    so .vim.custom
-endif
+set exrc
+set secure
 
 function! NewFile()
     silent! 0r $HOME/.vim/skeleton.%:e
@@ -48,3 +47,5 @@ let g:vim_markdown_folding_disabled=1
 let g:ctrlspace_default_mapping_key="<C-a>"
 let g:airline_exclude_preview = 1
 let g:airline#extensions#branch#enabled = 1
+let g:instant_markdown_slow = 1
+let g:instant_markdown_autostart = 0
