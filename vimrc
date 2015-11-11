@@ -45,7 +45,7 @@ call pathogen#infect()
 let g:vim_markdown_folding_disabled=1
 "colorscheme solarized
 "let g:solarized_contrast="high"
-let g:ctrlspace_default_mapping_key="<C-a>"
+let g:CtrlSpaceDefaultMappingKey = "<C-a>"
 let g:airline_exclude_preview = 1
 let g:airline#extensions#branch#enabled = 1
 let g:instant_markdown_slow = 1
