@@ -10,6 +10,7 @@ set expandtab
 set nohlsearch
 set autoindent
 set cindent
+set hidden
 set backspace=indent,eol,start
 set background=dark
 let g:indent_guides_start_level=2
