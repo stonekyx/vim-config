@@ -3,11 +3,11 @@ filetype indent on
 filetype plugin on
 set number
 set showcmd
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set expandtab
-set nohlsearch
+set hlsearch
 set autoindent
 set cindent
 set hidden
@@ -38,7 +38,7 @@ autocmd BufNewFile * call NewFile()
 
 let g:pathogen_disabled = []
 if !has('gui_running')
-    call add(g:pathogen_disabled, 'youcompleteme')
+"    call add(g:pathogen_disabled, 'youcompleteme')
 endif
 
 call pathogen#infect()
@@ -58,3 +58,29 @@ autocmd FileType java let &makeprg='javac -cp .:/usr/share/java/junit-4.11.jar %
 autocmd FileType pascal let &makeprg='fpc -g %'
 autocmd FileType python let &makeprg='python2 %'
 autocmd FileType plaintex let &makeprg='pdflatex % && xpdf %:r.pdf &>/dev/null'
+
+""""""""""""""
+" tmux fixes "
+""""""""""""""
+" Handle tmux $TERM quirks in vim
+if $TERM =~ '^screen-256color'
+  set t_Co=256
+  map <Esc>OH <Home>
+  map! <Esc>OH <Home>
+  map <Esc>OF <End>
+  map! <Esc>OF <End>
+endif
+
+" Highlight word under cursor
+augroup CursorHighlighter
+let g:cursorHighlighterEnabled = 0
+function! ToggleCursorHighlighter()
+  if g:cursorHighlighterEnabled == 1
+    let g:cursorHighlighterEnabled = 0
+    autocmd! CursorHighlighter
+  else
+    let g:cursorHighlighterEnabled = 1
+    autocmd CursorHighlighter CursorMoved * silent! exe printf('match IncSearch /\<%s\>/', expand('<cword>'))
+  endif
+endfunction
+nnoremap <F2> :call ToggleCursorHighlighter()<CR>
