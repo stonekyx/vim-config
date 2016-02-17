@@ -40,3 +40,6 @@
 [submodule "bundle/vim-soy"]
 	path = bundle/vim-soy
 	url = https://github.com/duganchen/vim-soy.git
+[submodule "bundle/vim-closure"]
+	path = bundle/vim-closure
+	url = https://github.com/stonekyx/vim-closure

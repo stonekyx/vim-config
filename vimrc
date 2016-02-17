@@ -84,3 +84,6 @@ function! ToggleCursorHighlighter()
   endif
 endfunction
 nnoremap <F2> :call ToggleCursorHighlighter()<CR>
+
+" Open definition of function under cursor
+nnoremap <leader>d :!opendef .<c-r>=expand("<cword>")<cr><cr>
