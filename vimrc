@@ -13,6 +13,7 @@ set cindent
 set hidden
 set backspace=indent,eol,start
 set background=dark
+set textwidth=120
 let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
 let g:indent_guides_enable_on_vim_startup=1
@@ -21,7 +22,6 @@ map <F4> :TlistToggle<cr>
 "python from powerline.ext.vim import source_plugin; source_plugin()
 set laststatus=2
 set scrolloff=9999
-colorscheme Tomorrow-Night
 
 "Access X11 and <C-V> clipboard
 set clipboard=unnamed,unnamedplus
@@ -48,6 +48,7 @@ let g:vim_markdown_folding_disabled=1
 let g:CtrlSpaceDefaultMappingKey = "<C-a>"
 let g:airline_exclude_preview = 1
 let g:airline#extensions#branch#enabled = 1
+let g:airline_powerline_fonts = 1
 let g:instant_markdown_slow = 1
 let g:instant_markdown_autostart = 0
 
@@ -86,4 +87,47 @@ endfunction
 nnoremap <F2> :call ToggleCursorHighlighter()<CR>
 
 " Open definition of function under cursor
-nnoremap <leader>d :!opendef .<c-r>=expand("<cword>")<cr><cr>
+function! JSOpenDefExternal()
+  exec "!opendef " . "." . expand("<cword>")
+endfunction
+function! JSOpenDef()
+  let l:searchString = "\." . expand("<cword>") . " = function"
+  if search(l:searchString, "s") == 0
+    call JSOpenDefExternal()
+  else
+    let @/ = l:searchString
+  endif
+endfunction
+nnoremap <leader>d :call JSOpenDef()<CR>
+nnoremap <leader>D :call JSOpenDefExternal()<CR>
+
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+map <Leader> <Plug>(easymotion-prefix)
+
+" Jump to anywhere you want with minimal keystrokes, with just one key binding.
+" `s{char}{label}`
+nmap <Leader>s <Plug>(easymotion-overwin-f)
+" or
+" `s{char}{char}{label}`
+" Need one more keystroke, but on average, it may be more comfortable.
+nmap <Leader>s <Plug>(easymotion-overwin-f2)
+
+" Turn on case insensitive feature
+let g:EasyMotion_smartcase = 1
+
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+
+" Gif config
+map  <Leader>/ <Plug>(easymotion-sn)
+omap <Leader>/ <Plug>(easymotion-tn)
+
+" These `n` & `N` mappings are options. You do not have to map `n` & `N` to EasyMotion.
+" Without these mappings, `n` & `N` works fine. (These mappings just provide
+" different highlight method and have some other features )
+map  <Leader>n <Plug>(easymotion-next)
+map  <Leader>N <Plug>(easymotion-prev)
+
+colorscheme solarized
