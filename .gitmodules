@@ -43,3 +43,6 @@
 [submodule "bundle/vim-closure"]
 	path = bundle/vim-closure
 	url = https://github.com/stonekyx/vim-closure
+[submodule "bundle/vim-easymotion"]
+	path = bundle/vim-easymotion
+	url = https://github.com/easymotion/vim-easymotion
