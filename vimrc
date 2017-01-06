@@ -130,4 +130,4 @@ omap <Leader>/ <Plug>(easymotion-tn)
 map  <Leader>n <Plug>(easymotion-next)
 map  <Leader>N <Plug>(easymotion-prev)
 
-colorscheme solarized
+colorscheme Tomorrow-Night
