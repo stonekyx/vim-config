@@ -1,4 +1,5 @@
 set guifont=Inconsolata\ for\ Powerline\ Medium\ 11.5
+set guifont=Ricty\ Regular\ for\ Powerline:h18
 colorscheme pencil
 set bg=light
 
