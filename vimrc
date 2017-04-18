@@ -46,11 +46,10 @@ let g:vim_markdown_folding_disabled=1
 "colorscheme solarized
 "let g:solarized_contrast="high"
 let g:CtrlSpaceDefaultMappingKey = "<C-a>"
+let g:CtrlSpaceSymbols = { "File": "◯", "CTab": "▣", "Tabs": "▢" }
 let g:airline_exclude_preview = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline_powerline_fonts = 1
-let g:instant_markdown_slow = 1
-let g:instant_markdown_autostart = 0
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:ycm_key_invoke_completion = '<C-Tab>'
 let g:ycm_extra_conf_globlist = ['~/*egui_final/*', '~/fun/c/*']
@@ -101,8 +100,12 @@ function! JSOpenDef()
     let @/ = l:searchString
   endif
 endfunction
+function! JSGrepF()
+  exec "!jsgrepf -w " . expand("<cword>")
+endfunction
 nnoremap <leader>d :call JSOpenDef()<CR>
 nnoremap <leader>D :call JSOpenDefExternal()<CR>
+nnoremap <leader>f :call JSGrepF()<CR>
 
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 
@@ -134,3 +137,28 @@ map  <Leader>n <Plug>(easymotion-next)
 map  <Leader>N <Plug>(easymotion-prev)
 
 colorscheme Tomorrow-Night
+
+
+
+function! DeleteInactiveBufs()
+  "From tabpagebuflist() help, get a list of all buffers in all tabs
+  let tablist = []
+  for i in range(tabpagenr('$'))
+    call extend(tablist, tabpagebuflist(i + 1))
+  endfor
+
+  "Below originally inspired by Hara Krishna Dara and Keith Roberts
+  "http://tech.groups.yahoo.com/group/vim/message/56425
+  let nWipeouts = 0
+  for i in range(1, bufnr('$'))
+    if bufexists(i) && !getbufvar(i,"&mod") && index(tablist, i) == -1
+      "bufno exists AND isn't modified AND isn't in the list of buffers open in windows and tabs
+      silent exec 'bwipeout' i
+      let nWipeouts = nWipeouts + 1
+    endif
+  endfor
+  echomsg nWipeouts . ' buffer(s) wiped out'
+endfunction
+command! Bdi :call DeleteInactiveBufs()
+
+command! Tblame :exec "!tig blame +" . line('.') . " " . expand('%')
