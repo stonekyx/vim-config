@@ -52,7 +52,7 @@ let g:airline#extensions#branch#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:ycm_key_invoke_completion = '<C-Tab>'
-let g:ycm_extra_conf_globlist = ['~/*egui_final/*', '~/fun/c/*']
+let g:ycm_extra_conf_globlist = ['~/*egui_final/*', '~/fun/cmus/*']
 
 autocmd FileType c let &makeprg='gcc -g -Wall -lm -o %:r %'
 autocmd FileType cpp let &makeprg='g++ -g -Wall -Wextra -std=c++0x % -o %:r'
