@@ -47,6 +47,10 @@ let g:vim_markdown_folding_disabled=1
 "let g:solarized_contrast="high"
 let g:CtrlSpaceDefaultMappingKey = "<C-a>"
 let g:CtrlSpaceSymbols = { "File": "◯", "CTab": "▣", "Tabs": "▢" }
+let g:CtrlSpaceLoadLastWorkspaceOnStart = 1
+let g:CtrlSpaceSaveWorkspaceOnExit = 1
+let g:CtrlSpaceSearchTiming = 300
+let g:CtrlSpaceIgnoredFiles = '\v(tmp|temp|target|target-server-side|node_modules|webapp\/lib)[\/]'
 let g:airline_exclude_preview = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline_powerline_fonts = 1
@@ -90,7 +94,7 @@ nnoremap <F2> :call ToggleCursorHighlighter()<CR>
 
 " Open definition of function under cursor
 function! JSOpenDefExternal()
-  exec "!opendef " . "." . expand("<cword>")
+  exec "Ggrep '\." . expand("<cword>") . " = function' '*.js' | cw"
 endfunction
 function! JSOpenDef()
   let l:searchString = "\." . expand("<cword>") . " = function"
