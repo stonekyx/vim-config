@@ -107,9 +107,15 @@ endfunction
 function! JSGrepF()
   exec "!jsgrepf -w " . expand("<cword>")
 endfunction
+function! OpenRedmineIssue()
+  if !empty(matchstr(expand("<cword>"), "^[[:digit:]]*$"))
+    exec "!open-redmine " . expand("<cword>")
+  endif
+endfunction
 nnoremap <leader>d :call JSOpenDef()<CR>
 nnoremap <leader>D :call JSOpenDefExternal()<CR>
 nnoremap <leader>f :call JSGrepF()<CR>
+nnoremap <leader>r :call OpenRedmineIssue()<CR>
 
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 
