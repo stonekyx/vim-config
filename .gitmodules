@@ -52,6 +52,7 @@
 [submodule "bundle/ycm-generator"]
 	path = bundle/ycm-generator
 	url = https://github.com/rdnetto/YCM-Generator
+  branch = develop
 [submodule "bundle/vim-json"]
 	path = bundle/vim-json
 	url = https://github.com/elzr/vim-json
