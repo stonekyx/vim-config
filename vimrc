@@ -172,3 +172,9 @@ endfunction
 command! Bdi :call DeleteInactiveBufs()
 
 command! Tblame :exec "!tig blame +" . line('.') . " " . expand('%')
+
+" Rainbow parentheses
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
