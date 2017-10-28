@@ -57,6 +57,18 @@ let g:airline_powerline_fonts = 1
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:ycm_key_invoke_completion = '<C-Tab>'
 let g:ycm_extra_conf_globlist = ['~/*egui_final/*', '~/fun/cmus/*']
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_conceal_function             = "ƒ"
+let g:javascript_conceal_null                 = "ø"
+let g:javascript_conceal_this                 = "@"
+let g:javascript_conceal_return               = "⇚"
+let g:javascript_conceal_undefined            = "¿"
+let g:javascript_conceal_NaN                  = "ℕ"
+let g:javascript_conceal_prototype            = "¶"
+let g:javascript_conceal_static               = "•"
+let g:javascript_conceal_super                = "Ω"
+let g:javascript_conceal_arrow_function       = "⇒"
+let g:fugitive_gitlab_domains = ['https://scm.hue.workslan', 'http://product-ci']
 
 autocmd FileType c let &makeprg='gcc -g -Wall -lm -o %:r %'
 autocmd FileType cpp let &makeprg='g++ -g -Wall -Wextra -std=c++0x % -o %:r'
@@ -116,6 +128,8 @@ nnoremap <leader>d :call JSOpenDef()<CR>
 nnoremap <leader>D :call JSOpenDefExternal()<CR>
 nnoremap <leader>f :call JSGrepF()<CR>
 nnoremap <leader>r :call OpenRedmineIssue()<CR>
+nnoremap <leader>ifn i<C-R>=expand("%:t:r")<CR><ESC>
+nnoremap <leader>afn a<C-R>=expand("%:t:r")<CR><ESC>
 
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 
@@ -145,6 +159,8 @@ omap <Leader>/ <Plug>(easymotion-tn)
 " different highlight method and have some other features )
 map  <Leader>n <Plug>(easymotion-next)
 map  <Leader>N <Plug>(easymotion-prev)
+
+map <leader>l :exec &conceallevel ? "set conceallevel=0" : "set conceallevel=1"<CR>
 
 colorscheme Tomorrow-Night
 
@@ -178,3 +194,20 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
+"au Syntax * RainbowParenthesesLoadChevrons
+
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
