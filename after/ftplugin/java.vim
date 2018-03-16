@@ -35,3 +35,8 @@ if !exists("JUnitAutocmdLoaded")
     autocmd BufNewFile *Test.java silent! 0r $HOME/.vim/skeleton.junit
     let JUnitAutocmdLoaded = 1
 endif
+
+setlocal tabstop=4
+setlocal softtabstop=4
+setlocal shiftwidth=4
+setlocal cinoptions=j1,(2s,+2s

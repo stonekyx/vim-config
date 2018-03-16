@@ -18,7 +18,7 @@ let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
 let g:indent_guides_enable_on_vim_startup=1
 nnoremap <F3> :set hlsearch!<CR>
-map <F4> :TlistToggle<cr>
+nmap <F4> :TagbarToggle<cr>
 "python from powerline.ext.vim import source_plugin; source_plugin()
 set laststatus=2
 set scrolloff=9999
