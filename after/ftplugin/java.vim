@@ -30,6 +30,7 @@ map <F6> :RunJava<CR>
 map <F7> :RunJavaTest<CR>
 map <F8> :make<CR>
 map <F9> :EditOriginal<CR>
+nnoremap <leader>d :JavaSearchContext<CR>
 
 if !exists("JUnitAutocmdLoaded")
     autocmd BufNewFile *Test.java silent! 0r $HOME/.vim/skeleton.junit
