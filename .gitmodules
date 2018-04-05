@@ -83,3 +83,12 @@
 [submodule "bundle/tagbar"]
 	path = bundle/tagbar
 	url = https://github.com/majutsushi/tagbar
+[submodule "bundle/vim-codefmt"]
+	path = bundle/vim-codefmt
+	url = https://github.com/google/vim-codefmt
+[submodule "bundle/vim-maktaba"]
+	path = bundle/vim-maktaba
+	url = https://github.com/google/vim-maktaba
+[submodule "bundle/vim-glaive"]
+	path = bundle/vim-glaive
+	url = https://github.com/google/vim-glaive
