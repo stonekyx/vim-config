@@ -71,6 +71,7 @@ let g:javascript_conceal_arrow_function       = "⇒"
 let g:fugitive_gitlab_domains = ['https://scm.hue.workslan', 'http://product-ci']
 let g:EclimCompletionMethod = 'omnifunc'
 let g:EclimTempFilesEnable = 1
+let g:EclimLoggingDisabled = 1
 
 autocmd FileType c let &makeprg='gcc -g -Wall -lm -o %:r %'
 autocmd FileType cpp let &makeprg='g++ -g -Wall -Wextra -std=c++0x % -o %:r'
@@ -102,6 +103,7 @@ function! ToggleCursorHighlighter()
   else
     let g:cursorHighlighterEnabled = 1
     autocmd CursorHighlighter CursorMoved * silent! exe printf('match IncSearch /\<%s\>/', expand('<cword>'))
+    silent! exe printf('match IncSearch /\<%s\>/', expand('<cword>'))
   endif
 endfunction
 nnoremap <F2> :call ToggleCursorHighlighter()<CR>
