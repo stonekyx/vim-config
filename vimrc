@@ -96,17 +96,21 @@ endif
 " Highlight word under cursor
 augroup CursorHighlighter
 let g:cursorHighlighterEnabled = 0
+function! HighlightCursor()
+  silent! exe printf('match IncSearch /\<%s\>/', expand('<cword>'))
+endfunction
 function! ToggleCursorHighlighter()
   if g:cursorHighlighterEnabled == 1
     let g:cursorHighlighterEnabled = 0
     autocmd! CursorHighlighter
   else
     let g:cursorHighlighterEnabled = 1
-    autocmd CursorHighlighter CursorMoved * silent! exe printf('match IncSearch /\<%s\>/', expand('<cword>'))
-    silent! exe printf('match IncSearch /\<%s\>/', expand('<cword>'))
+    autocmd CursorHighlighter CursorMoved * call HighlightCursor()
+    call HighlightCursor()
   endif
 endfunction
-nnoremap <F2> :call ToggleCursorHighlighter()<CR>
+nnoremap <F2> :call HighlightCursor()<CR>
+nnoremap <leader><F2> :call ToggleCursorHighlighter()<CR>
 
 " Redmine/file name shortcuts
 function! OpenRedmineIssue()
