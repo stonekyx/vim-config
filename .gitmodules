@@ -92,3 +92,6 @@
 [submodule "bundle/vim-glaive"]
 	path = bundle/vim-glaive
 	url = https://github.com/google/vim-glaive
+[submodule "bundle/vim-unimpaired"]
+	path = bundle/vim-unimpaired
+	url = https://github.com/tpope/vim-unimpaired
