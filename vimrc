@@ -49,6 +49,7 @@ let g:CtrlSpaceDefaultMappingKey = "<C-a>"
 let g:CtrlSpaceSymbols = { "File": "◯", "CTab": "▣", "Tabs": "▢" }
 let g:CtrlSpaceLoadLastWorkspaceOnStart = 1
 let g:CtrlSpaceSaveWorkspaceOnExit = 1
+let g:CtrlSpaceSaveWorkspaceOnSwitch = 1
 let g:CtrlSpaceSearchTiming = 300
 let g:CtrlSpaceIgnoredFiles = '\v(tmp|temp|target|target-server-side|node_modules|webapp\/lib)[\/]'
 let g:airline_exclude_preview = 1
@@ -179,6 +180,7 @@ endfunction
 command! Bdi :call DeleteInactiveBufs()
 
 command! Tblame :exec "!tig blame +" . line('.') . " " . expand('%')
+command! -nargs=* Terminal :terminal ++close <f-args>
 
 " Rainbow parentheses
 au VimEnter * RainbowParenthesesToggle

@@ -25,13 +25,13 @@ if !exists("*BackFromJavaTest")
     command! EditOriginal call BackFromJavaTest()
 endif
 
-map <F5> :EditTest<CR>
-map <F6> :RunJava<CR>
-map <F7> :RunJavaTest<CR>
-map <F8> :make<CR>
-map <F9> :EditOriginal<CR>
-nnoremap <leader>d :JavaSearchContext<CR>
-nnoremap <leader>h :JavaDocPreview<CR>
+map <buffer> <F5> :EditTest<CR>
+map <buffer> <F6> :RunJava<CR>
+map <buffer> <F7> :RunJavaTest<CR>
+map <buffer> <F8> :make<CR>
+map <buffer> <F9> :EditOriginal<CR>
+nnoremap <buffer> <leader>d :JavaSearchContext<CR>
+nnoremap <buffer> <leader>h :JavaDocPreview<CR>
 
 if !exists("JUnitAutocmdLoaded")
     autocmd BufNewFile *Test.java silent! 0r $HOME/.vim/skeleton.junit
