@@ -29,6 +29,8 @@ set clipboard=unnamed,unnamedplus
 set exrc
 set secure
 
+let mapleader=","
+
 function! NewFile()
     silent! 0r $HOME/.vim/skeleton.%:e
     silent! s/FILENAME/\=expand("%:t:r")
@@ -156,6 +158,12 @@ map  <Leader>N <Plug>(easymotion-prev)
 
 map <leader>l :exec &conceallevel ? "set conceallevel=0" : "set conceallevel=1"<CR>
 
+nmap <leader><tab> <plug>(fzf-maps-n)
+xmap <leader><tab> <plug>(fzf-maps-x)
+omap <leader><tab> <plug>(fzf-maps-o)
+nmap <leader>o :Files<CR>
+nmap <leader>g :GFiles<CR>
+
 colorscheme Tomorrow-Night
 
 
@@ -212,5 +220,7 @@ let g:rbpt_colorpairs = [
 "  autocmd FileType html,css,json AutoFormatBuffer js-beautify
 "  autocmd FileType java AutoFormatBuffer google-java-format
 "augroup END
+
+au BufWinEnter,InsertEnter,CursorHold * checktime
 
 call glaive#Install()
