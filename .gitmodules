@@ -104,3 +104,6 @@
 [submodule "bundle/vim-cljfmt"]
 	path = bundle/vim-cljfmt
 	url = https://github.com/venantius/vim-cljfmt
+[submodule "bundle/vim-parinfer"]
+	path = bundle/vim-parinfer
+	url = https://github.com/bhurlow/vim-parinfer

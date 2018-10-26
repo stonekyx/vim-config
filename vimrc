@@ -22,6 +22,7 @@ nmap <F4> :TagbarToggle<cr>
 "python from powerline.ext.vim import source_plugin; source_plugin()
 set laststatus=2
 set scrolloff=9999
+set rtp+=/usr/local/opt/fzf
 
 "Access X11 and <C-V> clipboard
 set clipboard=unnamed,unnamedplus
