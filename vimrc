@@ -164,6 +164,7 @@ xmap <leader><tab> <plug>(fzf-maps-x)
 omap <leader><tab> <plug>(fzf-maps-o)
 nmap <leader>o :Files<CR>
 nmap <leader>g :GFiles<CR>
+nmap <leader>G :GGrep<CR>
 
 colorscheme Tomorrow-Night
 
@@ -192,6 +193,12 @@ command! Bdi :call DeleteInactiveBufs()
 
 command! Tblame :exec "!tig blame +" . line('.') . " " . expand('%')
 command! -nargs=* Terminal :terminal ++close <f-args>
+" Command for git grep
+" - fzf#vim#grep(command, with_column, [options], [fullscreen])
+command! -bang -nargs=* GGrep
+      \ call fzf#vim#grep(
+      \   'git grep --line-number '.shellescape(<q-args>), 0,
+      \   { 'dir': systemlist('git rev-parse --show-toplevel')[0] }, <bang>0)
 
 " Rainbow parentheses
 au VimEnter * RainbowParenthesesToggle
