@@ -23,6 +23,7 @@ nmap <F4> :TagbarToggle<cr>
 set laststatus=2
 set scrolloff=9999
 set rtp+=/usr/local/opt/fzf
+set encoding=utf-8
 
 "Access X11 and <C-V> clipboard
 set clipboard=unnamed,unnamedplus
