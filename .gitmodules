@@ -110,3 +110,9 @@
 [submodule "bundle/DrawIt"]
 	path = bundle/DrawIt
 	url = https://github.com/vim-scripts/DrawIt
+[submodule "bundle/vim-jsx"]
+	path = bundle/vim-jsx
+	url = https://github.com/mxw/vim-jsx
+[submodule "bundle/ale"]
+	path = bundle/ale
+	url = https://github.com/w0rp/ale

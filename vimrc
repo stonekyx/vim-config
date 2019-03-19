@@ -45,7 +45,6 @@ if !has('gui_running')
 "    call add(g:pathogen_disabled, 'youcompleteme')
 endif
 
-call pathogen#infect()
 let g:vim_markdown_folding_disabled=1
 "colorscheme solarized
 "let g:solarized_contrast="high"
@@ -232,4 +231,5 @@ let g:rbpt_colorpairs = [
 
 au BufWinEnter,InsertEnter,CursorHold * checktime
 
+call pathogen#infect()
 call glaive#Install()

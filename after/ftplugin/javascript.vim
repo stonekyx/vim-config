@@ -17,3 +17,6 @@ endfunction
 nnoremap <buffer> <leader>d :call JSOpenDef()<CR>
 nnoremap <buffer> <leader>D :call JSOpenDefExternal()<CR>
 nnoremap <buffer> <leader>f :call JSGrepF()<CR>
+
+let b:ale_fixers = ['prettier']
+let g:ale_fix_on_save = 1
