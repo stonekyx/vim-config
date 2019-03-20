@@ -60,7 +60,6 @@ let g:airline#extensions#branch#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:ycm_key_invoke_completion = '<C-Tab>'
-let g:ycm_extra_conf_globlist = ['~/*egui_final/*', '~/fun/cmus/*']
 let g:ycm_key_list_stop_completion = ['<C-h>']
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_conceal_function             = "ƒ"
@@ -74,10 +73,8 @@ let g:javascript_conceal_static               = "•"
 let g:javascript_conceal_super                = "Ω"
 let g:javascript_conceal_arrow_function       = "⇒"
 let g:fugitive_gitlab_domains = ['https://scm.hue.workslan', 'http://product-ci']
-let g:EclimCompletionMethod = 'omnifunc'
-let g:EclimTempFilesEnable = 1
-let g:EclimLoggingDisabled = 1
 let g:clojure_maxlines = 10
+let g:user_emmet_install_global = 0
 
 autocmd FileType c let &makeprg='gcc -g -Wall -lm -o %:r %'
 autocmd FileType cpp let &makeprg='g++ -g -Wall -Wextra -std=c++0x % -o %:r'

@@ -5,3 +5,5 @@ if expand("%:e")=="ts"
         let &makeprg="checkmk % > %:r.c; gcc -g -Wall `pkg-config --libs --cflags check` " . origin . ".c %:r.c -o %:r; ./%:r"
     endif
 endif
+
+EmmetInstall
