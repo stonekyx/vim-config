@@ -116,3 +116,9 @@
 [submodule "bundle/ale"]
 	path = bundle/ale
 	url = https://github.com/w0rp/ale
+[submodule "bundle/Vim-Jinja2-Syntax"]
+	path = bundle/Vim-Jinja2-Syntax
+	url = https://github.com/Glench/Vim-Jinja2-Syntax
+[submodule "bundle/jp-autofmt"]
+	path = bundle/jp-autofmt
+	url = https://github.com/vim-jp/autofmt
