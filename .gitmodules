@@ -122,3 +122,6 @@
 [submodule "bundle/jp-autofmt"]
 	path = bundle/jp-autofmt
 	url = https://github.com/vim-jp/autofmt
+[submodule "bundle/rust.vim"]
+	path = bundle/rust.vim
+	url = https://github.com/rust-lang/rust.vim
